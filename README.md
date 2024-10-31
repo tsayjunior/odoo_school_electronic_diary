@@ -10,4 +10,6 @@ Este repositorio configura Odoo usando Docker y Docker Compose, con módulos per
 ## Instalación
 
 1. Clona el repositorio:
-  
+2. añadir dos carpetas con nombre
+    config
+    log
