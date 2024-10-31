@@ -1,0 +1,8 @@
+# Ignorar archivos y configuraciones de Docker que no quieras incluir
+.env
+
+# ignorar carpetas
+log/odoo-server.log
+
+# Ignorar el archivo de configuración de Odoo
+config/odoo.conf
