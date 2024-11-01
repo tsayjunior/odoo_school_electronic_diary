@@ -1,6 +1,6 @@
 services:
   web:
-    image: odoo:18.0
+    build: .  # Usar el Dockerfile en el mismo directorio
     depends_on:
       - db
     ports:
