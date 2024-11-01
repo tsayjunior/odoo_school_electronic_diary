@@ -14,6 +14,7 @@ services:
       - HOST=db
       - USER=odoo
       - PASSWORD=${POSTGRES_PASSWORD}
+      - EXTRA_ADDONS=/mnt/extra-addons
   db:
     image: postgres:15
     environment:
