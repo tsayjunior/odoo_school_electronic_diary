@@ -33,3 +33,12 @@ luego ponemos los codigos
 	odoo scaffold manage
 donde manage, es el nombre del modulo o nombre de la carpeta, y esto me generara una carpeta con nombre manage, con todas las carpetas para desarrollar
 
+
+//////////////////////////////////////
+otras configuraciones para config/odoo.config
+logfile = /var/log/odoo/odoo-server.log => sirve para mostrar los logs del sistema, en un archivo de ruta especifica, en este caso en la carpeta log/odoo-server.log
+
+log_handler = :DEBUG => sirve para iniciar el modo debug del sistema, para mostrar todos los mensaje en log, ya que odoo tiene como 5 tipos de mensajes, y en log solo muestra los de tipo importante, y si ponemos este codigo estará mostrando los 5 tipos
+para el modo debug, de lo tiene que activar desde el sistema, entrando en ajustes y luego en activar modo desarrollador (con activo), el cual se encuentra casi en lo ultimo de ajustes
+
+log_level = debug   => tambien sirve para mostrar el modo debug del sistema
