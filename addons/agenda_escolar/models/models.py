@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class materias(models.Model):
-#     _name = 'materias.materias'
-#     _description = 'materias.materias'
+# class agenda_escolar(models.Model):
+#     _name = 'agenda_escolar.agenda_escolar'
+#     _description = 'agenda_escolar.agenda_escolar'
 
 #     name = fields.Char()
 #     value = fields.Integer()
