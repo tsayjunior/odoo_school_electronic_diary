@@ -60,8 +60,11 @@ log_level = debug   => tambien sirve para mostrar el modo debug del sistema
 
 
 para reiniciar el contenedor docker, solo la parte web, se ejecuta
-        docker-compose restart web
 ESTANDO EN LA RAIZ DEL PROYECTO
+        
+        docker-compose restart web
+        docker-compose restart db
+
 
 
 ----------------------------------------------------------------------------------------------
@@ -109,6 +112,12 @@ Asegúrate de tener los permisos necesarios para ejecutar estos comandos, especi
 Los comandos para iniciar Docker Desktop solo son aplicables si tienes Docker Desktop instalado; de lo contrario, en Linux solo necesitas iniciar el servicio.
 
 
+***************** eliminar contendedores y volumenes en docker
+    docker-compose down -v
 
 
+*************** para dar permisos de escritura y lectura a init-addons.sh
+    chmod +x init-addons.sh
+
+    
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# para darle permiso de superusario para el servidor
+# sudo su
+
 # Esperar a que el contenedor de base de datos esté listo
 echo "Esperando a que el contenedor de base de datos esté listo..."
 until pg_isready -h db -U $USER; do
