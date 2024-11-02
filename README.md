@@ -112,6 +112,41 @@ Asegúrate de tener los permisos necesarios para ejecutar estos comandos, especi
 Los comandos para iniciar Docker Desktop solo son aplicables si tienes Docker Desktop instalado; de lo contrario, en Linux solo necesitas iniciar el servicio.
 
 
+*************************** configuraciones para el servidor con droplet **********************************
+
+una ves ingresado con ssh, poner los sgtes comandos para Actualizar tu sistema:
+        
+        sudo apt update  => actualiza la lista de app que tiene ubunto
+
+		sudo apt upgrade -y  => instala lo nuevo que tiene ubuntu, sus actualizaciones
+
+Instala Docker:
+
+        sudo apt install docker.io -y
+Inicia y habilita el servicio de Docker:
+
+        sudo systemctl start docker
+        sudo systemctl enable docker
+Instala Docker Compose:
+
+        sudo apt install docker-compose -y
+
+clonar repositorio en el servidor
+crear el archivo .env, con los datos necesarios
+
+luego ejectuar el proyecto
+        docker-compose up -d --build
+
+Para detener los contenedores, puedes usar:
+
+        sudo docker-compose down
+
+Y para reiniciarlos, simplemente usa:
+
+        sudo docker-compose up -d
+
+
+        
 ***************** eliminar contendedores y volumenes en docker
     docker-compose down -v
 
