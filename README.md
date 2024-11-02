@@ -61,5 +61,54 @@ log_level = debug   => tambien sirve para mostrar el modo debug del sistema
 
 para reiniciar el contenedor docker, solo la parte web, se ejecuta
         docker-compose restart web
-
 ESTANDO EN LA RAIZ DEL PROYECTO
+
+
+----------------------------------------------------------------------------------------------
+eliminar todos los contenedores de docker y sus volumenes, desde servidor
+
+Para eliminar todos los contenedores y volúmenes en Docker, puedes usar los siguientes comandos:
+
+Detener y eliminar todos los contenedores: Este comando detiene y elimina todos los contenedores en ejecución y detenidos:
+
+docker rm -f $(docker ps -aq)
+
+* docker ps -aq lista los ID de todos los contenedores.
+* docker rm -f elimina cada contenedor listado, y el flag -f fuerza la eliminación.
+Eliminar todos los volúmenes: Este comando elimina todos los volúmenes no utilizados, liberando espacio en disco:
+
+docker volume rm $(docker volume ls -q)
+* docker volume ls -q lista todos los volúmenes.
+* docker volume rm elimina cada volumen listado.
+Eliminar redes y otros recursos adicionales (opcional): Si deseas limpiar aún más el sistema, puedes eliminar también todas las redes no utilizadas y otros recursos con:
+
+docker network prune -f
+docker system prune -a --volumes -f
+* docker network prune -f elimina todas las redes no utilizadas.
+* docker system prune -a --volumes -f elimina contenedores detenidos, imágenes no usadas y volúmenes.
+Con estos comandos, podrás liberar espacio y limpiar tu entorno Docker por completo.
+
+////// para iniciar docker, desde comando en linux
+Iniciar el servicio Docker: Ejecuta el siguiente comando para iniciar Docker:
+
+    sudo systemctl start docker
+* Habilitar Docker para que se inicie al arranque (opcional):
+
+    sudo systemctl enable docker
+
+* Verificar que Docker está corriendo:
+
+    sudo systemctl status docker
+
+* Confirmar que Docker está funcionando correctamente:
+
+    docker info
+
+Nota:
+Asegúrate de tener los permisos necesarios para ejecutar estos comandos, especialmente en Linux, donde necesitas usar sudo.
+Los comandos para iniciar Docker Desktop solo son aplicables si tienes Docker Desktop instalado; de lo contrario, en Linux solo necesitas iniciar el servicio.
+
+
+
+
+
