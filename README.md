@@ -137,6 +137,12 @@ crear el archivo .env, con los datos necesarios
 luego ejectuar el proyecto
         docker-compose up -d --build
 
+        o
+
+        docker-compose up --build
+cualquiera de los dos sirve, solo que el que tiene -d, no muestra los logs que pasa cuando se inicia el servidor
+
+
 Para detener los contenedores, puedes usar:
 
         sudo docker-compose down
