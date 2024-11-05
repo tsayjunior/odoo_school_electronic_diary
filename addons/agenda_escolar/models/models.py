@@ -22,3 +22,10 @@ class teacher(models.Model):
     _inherit = 'res.partner'
 
     type_for_school = fields.Char(default='Docente', string='Tipo')
+
+
+class subject(models.Model):
+    _name = 'agenda_escolar.subject'
+    _description = 'agenda_escolar.subject'
+    
+    name = fields.Char()

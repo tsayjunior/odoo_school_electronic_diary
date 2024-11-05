@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_agenda_escolar_agenda_escolar,agenda_escolar.agenda_escolar,model_agenda_escolar_agenda_escolar,base.group_user,1,1,1,1
+access_agenda_escolar_subject,agenda_escolar.subject,model_agenda_escolar_subject,base.group_user,1,1,1,1
