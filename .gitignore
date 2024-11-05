@@ -6,3 +6,8 @@ log/odoo-server.log
 
 # Ignorar el archivo de configuración de Odoo
 config/odoo.conf
+
+# Ignorar archivos de caché de Python
+__pycache__/
+*.pyc
+*.pyo
