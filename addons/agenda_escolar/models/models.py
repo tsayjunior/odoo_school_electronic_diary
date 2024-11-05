@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
 # class agenda_escolar(models.Model):
@@ -17,3 +17,8 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
+class teacher(models.Model):
+    _name = 'res.partner'
+    _inherit = 'res.partner'
+
+    type_for_school = fields.Char(default='Docente', string='Tipo')

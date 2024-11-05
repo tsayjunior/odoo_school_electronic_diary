@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "agenda_escolar",
+    'name': "agenda escolar academica",
 
     'summary': "Short (1 phrase/line) summary of the module's purpose",
 
