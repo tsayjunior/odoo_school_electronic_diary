@@ -5,10 +5,19 @@
     <record model="ir.ui.view" id="agenda_escolar.teacher_partner_list">
       <field name="name">agenda_escolar teacher list</field>
       <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"></field>
+      <!-- <field name="inherit_id" >base.view_partner_form</field> -->
+      <field name="mode">primary</field>
       <field name="arch" type="xml">
-        <list>
-          <field name="type_for_school" ></field>
-        </list>
+        <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+          <page name='devs' string="Devs">
+            <group>
+              <group>
+                <field name="type_for_school"></field>
+              </group>
+            </group>
+          </page>
+        </xpath>
       </field>
     </record>
 
@@ -17,7 +26,9 @@
       <field name="model">agenda_escolar.subject</field>
       <field name="arch" type="xml">
         <list>
-          <field name="name" ></field>
+            <field name="name" ></field>
+            <field name="description" ></field>
+            <field name="code" ></field>
         </list>
       </field>
     </record>
@@ -25,25 +36,27 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="agenda_escolar.action_teacher_window">
-      <field name="name">agenda_escolar window</field>
+      <field name="name">Profesor</field>
       <field name="res_model">res.partner</field>
       <field name="view_mode">list,form</field>
     </record>
-    <!-- <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_list">
-      <field name="sequence" eval="1" >agenda_escolar window</field>
-      <field name="view_mode">tree</field>
-      <field name="view_id" ref="base.view_partner_tree">tree</field>
-      <field name="act_window_id" ref="agenda_escolar.action_teacher_window">tree</field>
-    </record> -->
-    <!-- <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_form">
-      <field name="sequence" eval="2" >agenda_escolar window</field>
+
+    <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_list">
+      <field name="sequence">1</field> <!-- Correcto: número dentro de los tags -->
+      <field name="view_mode">list</field>
+      <field name="view_id" ref="base.view_partner_tree"/>
+      <field name="act_window_id" ref="agenda_escolar.action_teacher_window"/>
+  </record>
+  <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_form">
+      <field name="sequence">2</field> <!-- Correcto: número dentro de los tags -->
       <field name="view_mode">form</field>
-      <field name="view_id" ref="manage.devs_partner_form">tree</field>
-      <field name="act_window_id" ref="agenda_escolar.action_teacher_window">tree</field>
-    </record> -->
+      <field name="view_id" ref="agenda_escolar.teacher_partner_list"/>
+      <field name="act_window_id" ref="agenda_escolar.action_teacher_window"/>
+  </record>
+
 
     <record model="ir.actions.act_window" id="agenda_escolar.subject_window">
-      <field name="name">agenda_escolar subject window</field>
+      <field name="name">Materias</field>
       <field name="res_model">agenda_escolar.subject</field>
       <field name="view_mode">list,form</field>
     </record>
@@ -79,7 +92,7 @@
     <menuitem name="Profesor" id="agenda_escolar.menu_1_teacher_list" parent="agenda_escolar.menu_1"
               action="agenda_escolar.action_teacher_window"/>
 
-    <menuitem name="subjects" id="agenda_escolar.menu_2_subject_list" parent="agenda_escolar.menu_2"
+    <menuitem name="Materias" id="agenda_escolar.menu_2_subject_list" parent="agenda_escolar.menu_2"
               action="agenda_escolar.subject_window"/>
 
 <!--
