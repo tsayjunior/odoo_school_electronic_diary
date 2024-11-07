@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="agenda_escolar" id="agenda_escolar.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Usuarios" id="agenda_escolar.menu_1" parent="agenda_escolar.menu_root"/>
+    <menuitem name="Clases" id="agenda_escolar.menu_2" parent="agenda_escolar.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Profesor" id="agenda_escolar.menu_1_teacher_list" parent="agenda_escolar.menu_1"
+              action="agenda_escolar.action_teacher_window"/>
+
+    <menuitem name="Materias" id="agenda_escolar.menu_2_subject_list" parent="agenda_escolar.menu_2"
+              action="agenda_escolar.subject_window"/>
+
+    <menuitem name="Clases" id="agenda_escolar.menu_2_class_school_list" parent="agenda_escolar.menu_2"
+              action="agenda_escolar.class_school_window"/>
+
+    <menuitem name="Horarios" id="agenda_escolar.menu_2_schedules_list" parent="agenda_escolar.menu_2"
+              action="agenda_escolar.schedules_window"/>
+  </data>
+</odoo>
