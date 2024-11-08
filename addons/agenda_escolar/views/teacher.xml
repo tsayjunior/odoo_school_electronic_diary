@@ -10,10 +10,11 @@
       <field name="mode">primary</field>
       <field name="arch" type="xml">
         <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
-          <page name='devs' string="Devs">
+          <page name='teacher' string="Docente">
             <group>
               <group>
-                <field name="type_for_school"></field>
+                <field name="is_teacher" readonly="1"></field>
+                <field name="type_for_school" readonly="1"></field>
               </group>
             </group>
           </page>
@@ -27,20 +28,22 @@
       <field name="name">Profesor</field>
       <field name="res_model">res.partner</field>
       <field name="view_mode">list,form</field>
+      <field name="domain">[('is_teacher', '=', True)]</field>
+      <field name="context">{'default_is_teacher':True}</field>
     </record>
 
     <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_list">
       <field name="sequence">1</field> <!-- Correcto: número dentro de los tags -->
       <field name="view_mode">list</field>
-      <field name="view_id" ref="base.view_partner_tree"/>
-      <field name="act_window_id" ref="agenda_escolar.action_teacher_window"/>
-  </record>
-  <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_form">
+      <field name="view_id" ref="base.view_partner_tree" />
+      <field name="act_window_id" ref="agenda_escolar.action_teacher_window" />
+    </record>
+    <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_form">
       <field name="sequence">2</field> <!-- Correcto: número dentro de los tags -->
       <field name="view_mode">form</field>
-      <field name="view_id" ref="agenda_escolar.teacher_partner_list"/>
-      <field name="act_window_id" ref="agenda_escolar.action_teacher_window"/>
-  </record>
+      <field name="view_id" ref="agenda_escolar.teacher_partner_list" />
+      <field name="act_window_id" ref="agenda_escolar.action_teacher_window" />
+    </record>
 
   </data>
 </odoo>
