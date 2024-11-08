@@ -2,3 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_agenda_escolar_subject,agenda_escolar.subject,model_agenda_escolar_subject,base.group_user,1,1,1,1
 access_agenda_escolar_class_school,agenda_escolar.class_school,model_agenda_escolar_class_school,base.group_user,1,1,1,1
 access_agenda_escolar_schedules,agenda_escolar.schedules,model_agenda_escolar_schedules,base.group_user,1,1,1,1
+access_agenda_escolar_day,agenda_escolar.day,model_agenda_escolar_day,base.group_user,1,1,1,1
+access_agenda_escolar_turn,agenda_escolar.turn,model_agenda_escolar_turn,base.group_user,1,1,1,1

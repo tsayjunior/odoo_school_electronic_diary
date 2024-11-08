@@ -25,5 +25,13 @@
 
     <menuitem name="Horarios" id="agenda_escolar.menu_2_schedules_list" parent="agenda_escolar.menu_2"
               action="agenda_escolar.schedules_window"/>
+              
+    <menuitem name="Dia" id="agenda_escolar.menu_2_day_list" parent="agenda_escolar.menu_2"
+    action="agenda_escolar.day_window"/>
+
+    <menuitem name="Turno" id="agenda_escolar.menu_2_turn_list" parent="agenda_escolar.menu_2"
+    action="agenda_escolar.turn_window"/>
+
+
   </data>
 </odoo>

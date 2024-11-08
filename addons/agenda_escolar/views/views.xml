@@ -1,0 +1,105 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="agenda_escolar.teacher_partner_list">
+      <field name="name">agenda_escolar teacher list</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"></field>
+      <!-- <field name="inherit_id" >base.view_partner_form</field> -->
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
+          <page name='devs' string="Devs">
+            <group>
+              <group>
+                <field name="type_for_school"></field>
+              </group>
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="agenda_escolar.subject_list">
+      <field name="name">agenda_escolar subject list</field>
+      <field name="model">agenda_escolar.subject</field>
+      <field name="arch" type="xml">
+        <list>
+            <field name="name" ></field>
+            <field name="description" ></field>
+            <field name="code" ></field>
+        </list>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="agenda_escolar.action_teacher_window">
+      <field name="name">Profesor</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_list">
+      <field name="sequence">1</field> <!-- Correcto: número dentro de los tags -->
+      <field name="view_mode">list</field>
+      <field name="view_id" ref="base.view_partner_tree"/>
+      <field name="act_window_id" ref="agenda_escolar.action_teacher_window"/>
+  </record>
+  <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_form">
+      <field name="sequence">2</field> <!-- Correcto: número dentro de los tags -->
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="agenda_escolar.teacher_partner_list"/>
+      <field name="act_window_id" ref="agenda_escolar.action_teacher_window"/>
+  </record>
+
+
+    <record model="ir.actions.act_window" id="agenda_escolar.subject_window">
+      <field name="name">Materias</field>
+      <field name="res_model">agenda_escolar.subject</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="agenda_escolar.action_server">
+      <field name="name">agenda_escolar server</field>
+      <field name="model_id" ref="model_agenda_escolar_agenda_escolar"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="agenda_escolar" id="agenda_escolar.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Usuarios" id="agenda_escolar.menu_1" parent="agenda_escolar.menu_root"/>
+    <menuitem name="Clases" id="agenda_escolar.menu_2" parent="agenda_escolar.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Profesor" id="agenda_escolar.menu_1_teacher_list" parent="agenda_escolar.menu_1"
+              action="agenda_escolar.action_teacher_window"/>
+
+    <menuitem name="Materias" id="agenda_escolar.menu_2_subject_list" parent="agenda_escolar.menu_2"
+              action="agenda_escolar.subject_window"/>
+
+<!--
+    <menuitem name="List" id="agenda_escolar.menu_1_list" parent="agenda_escolar.menu_1"
+              action="agenda_escolar.action_window"/>
+    <menuitem name="Server to list" id="agenda_escolar" parent="agenda_escolar.menu_2"
+              action="agenda_escolar.action_server"/>
+-->
+  </data>
+</odoo>
