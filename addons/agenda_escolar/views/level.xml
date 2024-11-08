@@ -2,23 +2,21 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="agenda_escolar.class_school_list">
-      <field name="name">agenda_escolar class_school list</field>
-      <field name="model">agenda_escolar.class_school</field>
+    <record model="ir.ui.view" id="agenda_escolar.level_list">
+      <field name="name">agenda_escolar level list</field>
+      <field name="model">agenda_escolar.level</field>
       <field name="arch" type="xml">
         <list>
             <field name="name" ></field>
-            <field name="description" ></field>
-            <field name="parallel" ></field>
         </list>
       </field>
     </record>
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="agenda_escolar.class_school_window">
-      <field name="name">Clase</field>
-      <field name="res_model">agenda_escolar.class_school</field>
+    <record model="ir.actions.act_window" id="agenda_escolar.level_window">
+      <field name="name">Nivel</field>
+      <field name="res_model">agenda_escolar.level</field>
       <field name="view_mode">list,form</field>
     </record>
 

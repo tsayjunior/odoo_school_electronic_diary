@@ -23,11 +23,15 @@ Long description of module's purpose
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/assign_schedules.xml',
+        'views/assign_subject.xml',
+        'views/level.xml',
         'views/turn.xml',
         'views/subject.xml',
         'views/day.xml',
-        'views/class_school.xml',
+        'views/course.xml',
         'views/schedules.xml',
+        # 'views/student.xml',
         'views/teacher.xml',
         'views/menu_views.xml',
         'views/templates.xml',

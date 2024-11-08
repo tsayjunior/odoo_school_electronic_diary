@@ -17,11 +17,14 @@
     <menuitem name="Profesor" id="agenda_escolar.menu_1_teacher_list" parent="agenda_escolar.menu_1"
               action="agenda_escolar.action_teacher_window"/>
 
+    <menuitem name="Estudiante" id="agenda_escolar.menu_1_student_list" parent="agenda_escolar.menu_1"
+              action="agenda_escolar.action_student_window"/>
+
     <menuitem name="Materias" id="agenda_escolar.menu_2_subject_list" parent="agenda_escolar.menu_2"
               action="agenda_escolar.subject_window"/>
 
-    <menuitem name="Clases" id="agenda_escolar.menu_2_class_school_list" parent="agenda_escolar.menu_2"
-              action="agenda_escolar.class_school_window"/>
+    <menuitem name="Curso" id="agenda_escolar.menu_2_course_list" parent="agenda_escolar.menu_2"
+              action="agenda_escolar.course_window"/>
 
     <menuitem name="Horarios" id="agenda_escolar.menu_2_schedules_list" parent="agenda_escolar.menu_2"
               action="agenda_escolar.schedules_window"/>
@@ -32,6 +35,11 @@
     <menuitem name="Turno" id="agenda_escolar.menu_2_turn_list" parent="agenda_escolar.menu_2"
     action="agenda_escolar.turn_window"/>
 
+    <menuitem name="Nivel" id="agenda_escolar.menu_2_level_list" parent="agenda_escolar.menu_2"
+    action="agenda_escolar.level_window"/>
+
+    <!-- <menuitem name="Asignacion materias" id="agenda_escolar.menu_2_assign_subject_list" parent="agenda_escolar.menu_2"
+    action="agenda_escolar.assign_subject_window"/> -->
 
   </data>
 </odoo>

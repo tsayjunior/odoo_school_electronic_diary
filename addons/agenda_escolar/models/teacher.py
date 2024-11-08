@@ -6,5 +6,6 @@ class teacher(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
 
+    is_teacher = fields.Boolean()
     type_for_school = fields.Char(default='Docente', string='Tipo')
 

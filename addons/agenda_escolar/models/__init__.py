@@ -3,7 +3,11 @@
 from . import models
 from . import teacher
 from . import subject
-from . import class_school
+from . import course
 from . import schedules
 from . import day
 from . import turn
+from . import level
+from . import assign_subject
+from . import assign_schedules
+# from . import student

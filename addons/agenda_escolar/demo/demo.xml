@@ -1,30 +1,132 @@
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="agenda_escolar.agenda_escolar">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+  <data>
+    <!-- dias -->
+    <record id="object0" model="agenda_escolar.day">
+      <field name="name">lunes</field>
+    </record>
+    <record id="object1" model="agenda_escolar.day">
+      <field name="name">martes</field>
+    </record>
+    <record id="object2" model="agenda_escolar.day">
+      <field name="name">miercoles</field>
+    </record>
+    <record id="object3" model="agenda_escolar.day">
+      <field name="name">jueves</field>
+    </record>
+    <record id="object4" model="agenda_escolar.day">
+      <field name="name">viernes</field>
+    </record>
+    <record id="object5" model="agenda_escolar.day">
+      <field name="name">sabado</field>
+    </record>
 
-          <record id="object1" model="agenda_escolar.agenda_escolar">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+    <!-- nivel -->
+    <record id="level_primaria" model="agenda_escolar.level">
+      <field name="name">primaria</field>
+    </record>
+    <record id="level_secundaria" model="agenda_escolar.level">
+      <field name="name">secundaria</field>
+    </record>
 
-          <record id="object2" model="agenda_escolar.agenda_escolar">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
+    <!-- curso -->
 
-          <record id="object3" model="agenda_escolar.agenda_escolar">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
+    <!-- Registros de cursos para el nivel de primaria -->
+    <record id="course_primaria_1" model="agenda_escolar.course">
+      <field name="name">primero</field>
+      <field name="description">primero de primaria</field>
+      <field name="parallel">A</field>
+      <field name="level_id" ref="agenda_escolar.level_primaria" />
+    </record>
+    <record id="course_primaria_2" model="agenda_escolar.course">
+      <field name="name">Segundo</field>
+      <field name="description">segundo de primaria</field>
+      <field name="parallel">B</field>
+      <field name="level_id" ref="agenda_escolar.level_primaria" />
+    </record>
+    <!-- Registros de cursos para el nivel de secundaria -->
+    <record id="course_secundaria_1" model="agenda_escolar.course">
+      <field name="name">primero</field>
+      <field name="description">primero seundaria</field>
+      <field name="parallel">A</field>
+      <field name="level_id" ref="agenda_escolar.level_secundaria" />
+    </record>
+    <record id="course_secundaria_2" model="agenda_escolar.course">
+      <field name="name">segundo</field>
+      <field name="description">segundo secundaria</field>
+      <field name="parallel">B</field>
+      <field name="level_id" ref="agenda_escolar.level_secundaria" />
+    </record>
 
-          <record id="object4" model="agenda_escolar.agenda_escolar">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
-    </data>
+    <!-- Turnos -->
+    <record id="turno_matutino" model="agenda_escolar.turn">
+      <field name="name">Matutino</field>
+      <field name="description">mañana</field>
+    </record>
+    <record id="turno_vespertino" model="agenda_escolar.turn">
+      <field name="name">Vespertino</field>
+      <field name="description">tarde</field>
+    </record>
+    <record id="turno_nocturno" model="agenda_escolar.turn">
+      <field name="name">Nocturno</field>
+      <field name="description">noche</field>
+    </record>
+
+    <!-- Horarios -->
+    <record id="schedule_morning1" model="agenda_escolar.schedules">
+      <field name="date_init">8.5</field> <!-- 8:30 AM -->
+      <field name="date_finish">10.0</field> <!-- 12:30 PM -->
+      <field name="turn_id" ref="turno_matutino" />
+    </record>
+    <record id="schedule_morning2" model="agenda_escolar.schedules">
+      <field name="date_init">10.5</field> <!-- 8:30 AM -->
+      <field name="date_finish">12.0</field> <!-- 12:30 PM -->
+      <field name="turn_id" ref="turno_matutino" />
+    </record>
+    <record id="schedule_afternoon1" model="agenda_escolar.schedules">
+      <field name="date_init">14.0</field> <!-- 1:00 PM -->
+      <field name="date_finish">15.5</field> <!-- 5:00 PM -->
+      <field name="turn_id" ref="turno_vespertino" />
+    </record>
+    <record id="schedule_afternoon2" model="agenda_escolar.schedules">
+      <field name="date_init">16.0</field> <!-- 6:00 PM -->
+      <field name="date_finish">17.5</field> <!-- 9:00 PM -->
+      <field name="turn_id" ref="turno_vespertino" />
+    </record>
+    <record id="schedule_evening1" model="agenda_escolar.schedules">
+      <field name="date_init">18.0</field> <!-- 6:00 PM -->
+      <field name="date_finish">19.5</field> <!-- 9:00 PM -->
+      <field name="turn_id" ref="turno_nocturno" />
+    </record>
+    <record id="schedule_evening2" model="agenda_escolar.schedules">
+      <field name="date_init">20.0</field> <!-- 6:00 PM -->
+      <field name="date_finish">21.5</field> <!-- 9:00 PM -->
+      <field name="turn_id" ref="turno_nocturno" />
+    </record>
+
+
+    <record id="subject_matematicas" model="agenda_escolar.subject">
+      <field name="name">Matemáticas</field>
+      <field name="description">Curso de Matemáticas para desarrollar habilidades numéricas y de
+        resolución de problemas.</field>
+      <field name="code">MAT101</field>
+    </record>
+    <record id="subject_lenguaje" model="agenda_escolar.subject">
+      <field name="name">Lenguaje</field>
+      <field name="description">Curso de Lenguaje para mejorar las habilidades de comunicación y
+        comprensión.</field>
+      <field name="code">LEN102</field>
+    </record>
+    <record id="subject_ciencias" model="agenda_escolar.subject">
+      <field name="name">Ciencias</field>
+      <field name="description">Curso de Ciencias para explorar el mundo natural y los principios
+        científicos.</field>
+      <field name="code">CIE103</field>
+    </record>
+    <record id="subject_historia" model="agenda_escolar.subject">
+      <field name="name">Historia</field>
+      <field name="description">Curso de Historia para conocer el pasado y sus implicaciones en el
+        presente.</field>
+      <field name="code">HIS104</field>
+    </record>
+  </data>
 </odoo>
