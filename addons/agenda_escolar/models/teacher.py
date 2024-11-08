@@ -2,10 +2,17 @@
 
 from odoo import models, fields, api
 
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    is_student = fields.Boolean(string='Es estudiante')
+    is_teacher = fields.Boolean(string='Es profesor')
+    is_admin = fields.Boolean(string='Es admin')
+    is_tutor = fields.Boolean(string='Es tutor')
+
+
 class teacher(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
 
-    is_teacher = fields.Boolean()
-    type_for_school = fields.Char(default='Docente', string='Tipo')
 

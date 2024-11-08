@@ -2,23 +2,21 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="agenda_escolar.teacher_partner_list">
-      <field name="name">agenda_escolar teacher list</field>
+    <record model="ir.ui.view" id="agenda_escolar.tutor_partner_list">
+      <field name="name">agenda_escolar tutor list</field>
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"></field>
       <!-- <field name="inherit_id" >base.view_partner_form</field> -->
       <field name="mode">primary</field>
       <field name="arch" type="xml">
         <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
-          <page name='teacher' string="Docente">
+          <page name='tutor' string="Tutor">
             <group>
               <group>
-                <field name="is_teacher" readonly="1"  invisible="1"></field>
-                <!-- <field name="type_for_school" readonly="1"></field> -->
+                <field name="is_tutor" invisible="1"></field>
                 <div class="o_form_label">
-                    <strong>Tipo: </strong> Docente
+                    <strong>Tipo: </strong> Tutor
                 </div>
-
               </group>
             </group>
           </page>
@@ -28,25 +26,25 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="agenda_escolar.action_teacher_window">
-      <field name="name">Profesor</field>
+    <record model="ir.actions.act_window" id="agenda_escolar.action_tutor_window">
+      <field name="name">Tutor</field>
       <field name="res_model">res.partner</field>
       <field name="view_mode">list,form</field>
-      <field name="domain">[('is_teacher', '=', True)]</field>
-      <field name="context">{'default_is_teacher':True}</field>
+      <field name="domain">[('is_tutor', '=', True)]</field>
+      <field name="context">{'default_is_tutor':True}</field>
     </record>
 
-    <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_list">
+    <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_tutor_list">
       <field name="sequence">1</field> <!-- Correcto: número dentro de los tags -->
       <field name="view_mode">list</field>
       <field name="view_id" ref="base.view_partner_tree" />
-      <field name="act_window_id" ref="agenda_escolar.action_teacher_window" />
+      <field name="act_window_id" ref="agenda_escolar.action_tutor_window" />
     </record>
-    <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_teacher_form">
+    <record model="ir.actions.act_window.view" id="agenda_escolar.action_view_tutor_form">
       <field name="sequence">2</field> <!-- Correcto: número dentro de los tags -->
       <field name="view_mode">form</field>
-      <field name="view_id" ref="agenda_escolar.teacher_partner_list" />
-      <field name="act_window_id" ref="agenda_escolar.action_teacher_window" />
+      <field name="view_id" ref="agenda_escolar.tutor_partner_list" />
+      <field name="act_window_id" ref="agenda_escolar.action_tutor_window" />
     </record>
 
   </data>

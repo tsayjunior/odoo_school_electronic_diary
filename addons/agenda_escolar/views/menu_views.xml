@@ -20,6 +20,12 @@
     <menuitem name="Estudiante" id="agenda_escolar.menu_1_student_list" parent="agenda_escolar.menu_1"
               action="agenda_escolar.action_student_window"/>
 
+    <menuitem name="Tutor" id="agenda_escolar.menu_1_tutor_list" parent="agenda_escolar.menu_1"
+              action="agenda_escolar.action_tutor_window"/>
+
+    <menuitem name="Administrador" id="agenda_escolar.menu_1_admin_list" parent="agenda_escolar.menu_1"
+              action="agenda_escolar.action_admin_window"/>
+
     <menuitem name="Materias" id="agenda_escolar.menu_2_subject_list" parent="agenda_escolar.menu_2"
               action="agenda_escolar.subject_window"/>
 

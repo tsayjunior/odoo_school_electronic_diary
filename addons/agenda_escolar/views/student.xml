@@ -10,11 +10,13 @@
       <field name="mode">primary</field>
       <field name="arch" type="xml">
         <xpath expr="//sheet/notebook/page[@name='internal_notes']" position="after">
-          <page name='student' string="Docente">
+          <page name='student' string="Estudiante">
             <group>
               <group>
-                <field name="is_student" readonly="1"></field>
-                <field name="type_for_school" readonly="1"></field>
+                <field name="is_student" invisible="1"></field>
+                <div class="o_form_label">
+                    <strong>Tipo: </strong> Estudiante
+                </div>
               </group>
             </group>
           </page>

@@ -10,4 +10,6 @@ from . import turn
 from . import level
 from . import assign_subject
 from . import assign_schedules
-# from . import student
+from . import student
+from . import tutor
+from . import admin
