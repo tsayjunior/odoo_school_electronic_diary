@@ -17,6 +17,12 @@
                 <div class="o_form_label">
                     <strong>Tipo: </strong> Estudiante
                 </div>
+                <!-- Agregar campo student_ids debajo de "Tipo: Tutor" -->
+                <field name="tutor_ids" widget="many2many_tags" 
+                 domain="[('is_tutor', '=', True)]"
+                 placeholder="Seleccione los Tutores..."/>
+                 <!-- Campo para la contraseña -->
+                <field name="password" widget="password"/>
               </group>
             </group>
           </page>

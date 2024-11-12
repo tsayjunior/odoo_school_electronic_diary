@@ -1,0 +1,17 @@
+<odoo>
+    <data noupdate="1">
+
+        <!-- Grupo para usuarios con acceso a "usuario" -->
+        <record id="group_user_menu" model="res.groups">
+            <field name="name">Usuario Menú</field>
+            <field name="category_id" ref="base.module_category_user_type"/>
+        </record>
+
+        <!-- Grupo para usuarios con acceso a "clase" -->
+        <record id="group_clase_menu" model="res.groups">
+            <field name="name">Clase Menú</field>
+            <field name="category_id" ref="base.module_category_user_type"/>
+        </record>
+
+    </data>
+</odoo>

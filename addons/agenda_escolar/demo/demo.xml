@@ -32,27 +32,27 @@
 
     <!-- Registros de cursos para el nivel de primaria -->
     <record id="course_primaria_1" model="agenda_escolar.course">
-      <field name="name">primero</field>
-      <field name="description">primero de primaria</field>
+      <field name="name">primero de secundaria</field>
+      <field name="description">primero de secundaria</field>
       <field name="parallel">A</field>
-      <field name="level_id" ref="agenda_escolar.level_primaria" />
+      <field name="level_id" ref="agenda_escolar.level_secundaria" />
     </record>
     <record id="course_primaria_2" model="agenda_escolar.course">
-      <field name="name">Segundo</field>
-      <field name="description">segundo de primaria</field>
+      <field name="name">Segundo de secundaria</field>
+      <field name="description">segundo de secundaria</field>
       <field name="parallel">B</field>
-      <field name="level_id" ref="agenda_escolar.level_primaria" />
+      <field name="level_id" ref="agenda_escolar.level_secundaria" />
     </record>
     <!-- Registros de cursos para el nivel de secundaria -->
     <record id="course_secundaria_1" model="agenda_escolar.course">
-      <field name="name">primero</field>
-      <field name="description">primero seundaria</field>
+      <field name="name">tercero de secundaria</field>
+      <field name="description">tercero seundaria</field>
       <field name="parallel">A</field>
       <field name="level_id" ref="agenda_escolar.level_secundaria" />
     </record>
     <record id="course_secundaria_2" model="agenda_escolar.course">
-      <field name="name">segundo</field>
-      <field name="description">segundo secundaria</field>
+      <field name="name">cuarto de secundaria</field>
+      <field name="description">cuarto secundaria</field>
       <field name="parallel">B</field>
       <field name="level_id" ref="agenda_escolar.level_secundaria" />
     </record>
@@ -127,6 +127,127 @@
       <field name="description">Curso de Historia para conocer el pasado y sus implicaciones en el
         presente.</field>
       <field name="code">HIS104</field>
+    </record>
+
+    <!-- Registro de un docente -->
+    <!-- <record id="res_partner_teacher_demo1" model="res.partner">
+      <field name="name">profesor1</field>
+      <field name="email">profesor1@example.com</field>
+      <field name="is_teacher">True</field>
+      <field name="password">123456</field>
+    </record> -->
+
+    <record id="res_partner_teacher_demo2" model="res.partner">
+      <field name="name">profesor2</field>
+      <field name="email">profesor2@example.com</field>
+      <field name="is_teacher">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_teacher_demo3" model="res.partner">
+      <field name="name">profesor3</field>
+      <field name="email">profesor3@example.com</field>
+      <field name="is_teacher">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_teacher_demo4" model="res.partner">
+      <field name="name">profesor4</field>
+      <field name="email">profesor4@example.com</field>
+      <field name="is_teacher">True</field>
+      <field name="password">123456</field>
+    </record>
+    <!-- Registros de los estudiantes -->
+    <record id="res_partner_student_init" model="res.partner">
+      <field name="name">estudiante init 1</field>
+      <field name="email">estudianteInit1@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_student_demo_2" model="res.partner">
+      <field name="name">estudiante2</field>
+      <field name="email">estudiante2@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_student_demo_3" model="res.partner">
+      <field name="name">estudiante3</field>
+      <field name="email">estudiante3@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_student_demo_4" model="res.partner">
+      <field name="name">estudiante4</field>
+      <field name="email">estudiante4@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_student_demo_5" model="res.partner">
+      <field name="name">estudiante5</field>
+      <field name="email">estudiante5@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_student_demo_6" model="res.partner">
+      <field name="name">estudiante6</field>
+      <field name="email">estudiante6@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_student_demo_7" model="res.partner">
+      <field name="name">estudiante7</field>
+      <field name="email">estudiante7@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+    <record id="res_partner_student_demo_8" model="res.partner">
+      <field name="name">estudiante8</field>
+      <field name="email">estudiante8@example.com</field>
+      <field name="is_student">True</field>
+      <field name="password">123456</field>
+    </record>
+
+    <!-- Registro de un administrador -->
+    <record id="res_partner_admin_demo" model="res.partner">
+      <field name="name">Administrador1</field>
+      <field name="email">administrador1@example.com</field>
+      <field name="is_admin">True</field>
+      <field name="password">123456</field>
+    </record>
+
+    <!-- Registros de los tutores -->
+    <record id="res_partner_tutor_init" model="res.partner">
+      <field name="name">tutor init</field>
+      <field name="email">tutorInit@example.com</field>
+      <field name="is_tutor">True</field>
+      <field name="password">123456</field>
+      <field name="student_ids"
+        eval="[(6, 0, [ref('res_partner_student_init'), ref('res_partner_student_demo_2')])]" />
+    </record>
+
+    <record id="res_partner_tutor_demo_2" model="res.partner">
+      <field name="name">tutor2</field>
+      <field name="email">tutor2@example.com</field>
+      <field name="is_tutor">True</field>
+      <field name="password">123456</field>
+      <field name="student_ids"
+        eval="[(6, 0, [ref('res_partner_student_demo_3'), ref('res_partner_student_demo_4')])]" />
+    </record>
+
+    <record id="res_partner_tutor_demo_3" model="res.partner">
+      <field name="name">tutor3</field>
+      <field name="email">tutor3@example.com</field>
+      <field name="is_tutor">True</field>
+      <field name="password">123456</field>
+      <field name="student_ids"
+        eval="[(6, 0, [ref('res_partner_student_demo_5'), ref('res_partner_student_demo_6')])]" />
+    </record>
+
+    <record id="res_partner_tutor_demo_4" model="res.partner">
+      <field name="name">tutor4</field>
+      <field name="email">tutor4@example.com</field>
+      <field name="is_tutor">True</field>
+      <field name="password">123456</field>
+      <field name="student_ids"
+        eval="[(6, 0, [ref('res_partner_student_demo_7'), ref('res_partner_student_demo_8')])]" />
     </record>
   </data>
 </odoo>

@@ -18,6 +18,14 @@
                     <strong>Tipo: </strong> Administrador
                 </div>
               </group>
+              <!-- Campo para la contraseña -->
+              <group>
+                <field name="password" widget="password"/>
+              </group>
+              <!-- Mostrar usuario asociado -->
+              <!-- <group>
+                <field name="user_id" readonly="1"/>
+              </group> -->
             </group>
           </page>
         </xpath>

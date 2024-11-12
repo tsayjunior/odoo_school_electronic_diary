@@ -1,0 +1,19 @@
+<!-- Archivo: agenda_escolar/data/groups.xml -->
+<odoo>
+    <data noupdate="1">
+        
+
+        <!-- Grupo Administrador -->
+        <record id="group_admin_partner" model="res.groups">
+            <field name="name">Administrador de Agenda Escolar</field>
+            <field name="category_id" ref="base.module_category_user_type"/>
+        </record>
+
+        <!-- Grupo Estudiante -->
+        <record id="group_student" model="res.groups">
+            <field name="name">Estudiante de Agenda Escolar</field>
+            <field name="category_id" ref="base.module_category_user_type"/>
+        </record>
+        
+    </data>
+</odoo>

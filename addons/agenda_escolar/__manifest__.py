@@ -22,9 +22,11 @@ Long description of module's purpose
 
     # always loaded
     'data': [
+        'data/groups.xml',  # Cargar el grupo de seguridad
         'security/ir.model.access.csv',
         'views/assign_schedules.xml',
         'views/assign_subject.xml',
+        'views/activity.xml',
         'views/level.xml',
         'views/turn.xml',
         'views/subject.xml',

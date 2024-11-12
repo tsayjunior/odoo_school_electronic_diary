@@ -7,3 +7,4 @@ access_agenda_escolar_turn,agenda_escolar.turn,model_agenda_escolar_turn,base.gr
 access_agenda_escolar_level,agenda_escolar.level,model_agenda_escolar_level,base.group_user,1,1,1,1
 access_agenda_escolar_assign_subject,agenda_escolar.assign_subject,model_agenda_escolar_assign_subject,base.group_user,1,1,1,1
 access_agenda_escolar_assign_schedules,agenda_escolar.assign_schedules,model_agenda_escolar_assign_schedules,base.group_user,1,1,1,1
+access_agenda_escolar_activity,agenda_escolar.activity,model_agenda_escolar_activity,base.group_user,1,1,1,1

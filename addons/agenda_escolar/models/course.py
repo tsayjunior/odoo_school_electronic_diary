@@ -9,8 +9,22 @@ class course(models.Model):
     name = fields.Char(string="Nombre", readonly=False, required=True, help='Introduzca el Nombre')
     description = fields.Text(string="Descripcion", readonly=False, required=False, help='Introduzca la descripcion')
     parallel = fields.Char(string="Paralelo", readonly=False, required=True, help='Introduzca el paralelo')
+    state = fields.Selection([
+        ('0', 'En curso'),
+        ('1', 'Finalizado')
+    ], string='State', default='0')
 
     level_id = fields.Many2one('agenda_escolar.level', string="Nivel", help="Seleccione el Nivel")
+
+    # Campo Many2many para los estudiantes inscritos en el curso
+    student_ids = fields.Many2many(
+        'res.partner',          # Modelo de destino
+        'student_course_rel',   # Nombre de la tabla intermedia
+        'course_id',            # Campo que apunta a 'agenda_escolar.course' (este modelo)
+        'student_id',           # Campo que apunta a 'res.partner' (modelo relacionado)
+        string='Estudiantes',
+        domain=[('is_student', '=', True)]
+    )
 
     def action_open_subjects(self):
             """Abre la vista de lista de materias"""

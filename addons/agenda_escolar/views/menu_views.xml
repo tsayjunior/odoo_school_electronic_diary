@@ -11,6 +11,7 @@
 
     <menuitem name="Usuarios" id="agenda_escolar.menu_1" parent="agenda_escolar.menu_root"/>
     <menuitem name="Clases" id="agenda_escolar.menu_2" parent="agenda_escolar.menu_root"/>
+    <menuitem name="Actividades" id="agenda_escolar.menu_3" parent="agenda_escolar.menu_root"/>
 
     <!-- actions -->
 
@@ -47,5 +48,11 @@
     <!-- <menuitem name="Asignacion materias" id="agenda_escolar.menu_2_assign_subject_list" parent="agenda_escolar.menu_2"
     action="agenda_escolar.assign_subject_window"/> -->
 
+    
+    <menuitem name="Actividad" id="agenda_escolar.menu_3_activity_list" parent="agenda_escolar.menu_3"
+              action="agenda_escolar.activity_window"/>
+
+    <!-- <menuitem name="Estudiante" id="agenda_escolar.menu_1_student_list" parent="agenda_escolar.menu_1"
+              action="agenda_escolar.action_student_window"/> -->
   </data>
 </odoo>
