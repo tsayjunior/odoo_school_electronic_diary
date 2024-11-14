@@ -2,6 +2,30 @@
 
 from odoo import models, fields, api
 
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    is_student = fields.Boolean(string='Es estudiante')
+    is_teacher = fields.Boolean(string='Es profesor')
+    is_admin = fields.Boolean(string='Es admin')
+    is_tutor = fields.Boolean(string='Es tutor') 
+    # Relación Many2one con el modelo res.users
+    user_id = fields.Many2one('res.users', string="Usuario", help="Usuario asociado al administrador")
+
+    # Definir la relación inversa
+    assign_subject_ids = fields.One2many(
+        'agenda_escolar.assign_subject',  # Modelo relacionado
+        'teacher_id',                     # Campo en agenda_escolar.assign_subject que hace referencia a res.partner
+        string="Asignaturas asignadas"    # Etiqueta del campo
+    )
+    course_ids = fields.Many2many(
+        'agenda_escolar.course',  # Modelo relacionado
+        'course_partner_rel',      # Nombre de la tabla relacional
+        'partner_id',              # Nombre del campo en la tabla relacional que referencia al otro modelo
+        'course_id',               # Nombre del campo en la tabla relacional que referencia a este modelo
+        string="Cursos"
+    )
+
 class teacher(models.Model):
     _name = 'res.partner'
     _inherit = 'res.partner'
