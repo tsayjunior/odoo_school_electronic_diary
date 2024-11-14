@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from . import models
+from . import res_partner
 from . import teacher
 from . import subject
 from . import course

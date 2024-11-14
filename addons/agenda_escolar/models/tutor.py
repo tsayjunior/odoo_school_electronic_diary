@@ -51,7 +51,7 @@ class tutor(models.Model):
                 'name': partner.name,
                 'login': partner.email,
                 'partner_id': partner.id,
-                'groups_id': [(6, 0, [self.env.ref('base.group_user').id])],  # Grupo básico de usuario
+                'groups_id': [(6, 0, [self.env.ref('base.group_user').id, self.env.ref('agenda_escolar.group_tutor').id])],  # Grupo básico de usuario
                 'password': password or '12345678',  # Contraseña predeterminada si no se especifica
             }
             user = self.env['res.users'].create(user_vals)
