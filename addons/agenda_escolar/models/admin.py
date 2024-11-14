@@ -58,7 +58,8 @@ class admin(models.Model):
         else:
             groups_to_update = [internal_user_group.id, admin_group.id] 
             user.write({
-                'password': password or user.password,
+                'password': password or user.password, 
+                'groups_id': [(6, 0, [self.env.ref('base.group_user').id, self.env.ref('agenda_escolar.group_admin_partner').id])]
                 # 'groups_id': [(6, 0, groups_to_update)]  # Actualizar grupos
             })
 

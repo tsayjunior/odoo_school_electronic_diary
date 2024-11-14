@@ -68,7 +68,9 @@ class student(models.Model):
 
         else:
             # Si el usuario ya existe, actualizar la contraseña
-            user.write({'password': password or user.password})
+            user.write({'password': password or user.password, 
+                        'groups_id': [(6, 0, [self.env.ref('base.group_user').id, self.env.ref('agenda_escolar.group_student').id])]
+                    })
         
         # En caso de que el partner no tenga un usuario asociado, lo asociamos
         if not partner.user_id:
