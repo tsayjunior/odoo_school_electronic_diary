@@ -39,11 +39,11 @@ Long description of module's purpose
         'views/tutor.xml',
         'views/student.xml',
         'views/teacher.xml',
-        'views/menu_views.xml',
         'views/content.xml',
         'views/event.xml',
         'views/comment.xml',
         'views/templates.xml',
+        'views/menu_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
