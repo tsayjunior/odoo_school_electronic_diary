@@ -12,6 +12,9 @@
     <menuitem name="Usuarios" id="agenda_escolar.menu_1" parent="agenda_escolar.menu_root" groups="agenda_escolar.group_admin_partner"/>
     <menuitem name="Clases" id="agenda_escolar.menu_2" parent="agenda_escolar.menu_root"/>
     <menuitem name="Actividades" id="agenda_escolar.menu_3" parent="agenda_escolar.menu_root"/>
+    <menuitem name="Centro de Profesores" id="agenda_escolar.menu_4" parent="agenda_escolar.menu_root"/>
+    <menuitem name="Centro de Estudiante" id="agenda_escolar.menu_5" parent="agenda_escolar.menu_root"/>
+    <menuitem name="Centro de Tutores" id="agenda_escolar.menu_6" parent="agenda_escolar.menu_root"/>
 
     <!-- actions -->
 

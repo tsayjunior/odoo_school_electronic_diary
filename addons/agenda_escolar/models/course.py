@@ -37,5 +37,5 @@ class course(models.Model):
                 'domain': [('course_id', '=', self.id)],  # Filtra la vista de lista por course_id actual
                 'context': {
                     'default_course_id': self.id,  # Establece el course_id por defecto en el formulario de creación
-            }
+                }
             }
