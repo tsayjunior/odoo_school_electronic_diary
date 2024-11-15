@@ -39,6 +39,8 @@ Long description of module's purpose
         'views/teacher.xml',
         'views/menu_views.xml',
         'views/content.xml',
+        'views/event.xml',
+        'views/comment.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

@@ -6,7 +6,6 @@ class assign_subject(models.Model):
     _name = 'agenda_escolar.assign_subject'
     _description = 'agenda_escolar.assign_subject'
     
-    
     course_id = fields.Many2one('agenda_escolar.course', string="curso", help="Seleccione el curso")
     subject_id = fields.Many2one('agenda_escolar.subject', string="materia", help="Seleccione materia")
     # teacher_id = fields.Many2one('agenda_escolar.teacher', string="docente", help="Seleccione docente")

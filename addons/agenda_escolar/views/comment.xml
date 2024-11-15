@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="agenda_escolar.comment_list">
+      <field name="name">agenda_escolar comment list</field>
+      <field name="model">agenda_escolar.comment</field>
+      <field name="arch" type="xml">
+        <list>
+            <field name="text" ></field>
+            <field name="event_id" ></field>
+            <field name="user_id" ></field>
+        </list>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="agenda_escolar.comment_window">
+      <field name="name">Contenido</field>
+      <field name="res_model">agenda_escolar.comment</field>
+      <field name="view_mode">list,form</field>
+    </record>
+  </data>
+</odoo>

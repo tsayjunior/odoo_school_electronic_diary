@@ -5,16 +5,20 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="agenda_escolar" id="agenda_escolar.menu_root"/>
+    <menuitem name="Agenda Escolar" id="agenda_escolar.menu_root"/>
 
     <!-- menu categories -->
 
     <menuitem name="Usuarios" id="agenda_escolar.menu_1" parent="agenda_escolar.menu_root" groups="agenda_escolar.group_admin_partner"/>
     <menuitem name="Clases" id="agenda_escolar.menu_2" parent="agenda_escolar.menu_root"/>
     <menuitem name="Actividades" id="agenda_escolar.menu_3" parent="agenda_escolar.menu_root"/>
+    <menuitem name="Eventos Academicos" id="agenda_escolar.menu_4" parent="agenda_escolar.menu_root"/>
+    
+    <!--
     <menuitem name="Centro de Profesores" id="agenda_escolar.menu_4" parent="agenda_escolar.menu_root"/>
     <menuitem name="Centro de Estudiante" id="agenda_escolar.menu_5" parent="agenda_escolar.menu_root"/>
     <menuitem name="Centro de Tutores" id="agenda_escolar.menu_6" parent="agenda_escolar.menu_root"/>
+    -->
 
     <!-- actions -->
 
@@ -51,11 +55,13 @@
     <!-- <menuitem name="Asignacion materias" id="agenda_escolar.menu_2_assign_subject_list" parent="agenda_escolar.menu_2"
     action="agenda_escolar.assign_subject_window"/> -->
 
-    
     <menuitem name="Actividad" id="agenda_escolar.menu_3_activity_list" parent="agenda_escolar.menu_3"
               action="agenda_escolar.activity_window"/>
 
     <!-- <menuitem name="Estudiante" id="agenda_escolar.menu_1_student_list" parent="agenda_escolar.menu_1"
               action="agenda_escolar.action_student_window"/> -->
+
+    <menuitem name="Eventos" id="agenda_escolar.menu_4_event_list" parent="agenda_escolar.menu_4"
+              action="agenda_escolar.event_window"/>
   </data>
 </odoo>
