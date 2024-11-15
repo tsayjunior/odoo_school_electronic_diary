@@ -9,6 +9,7 @@ class ResPartner(models.Model):
     is_teacher = fields.Boolean(string='Es profesor')
     is_admin = fields.Boolean(string='Es admin')
     is_tutor = fields.Boolean(string='Es tutor') 
+    token = fields.Boolean(string='Token') 
     # Relación Many2one con el modelo res.users
     user_id = fields.Many2one('res.users', string="Usuario", help="Usuario asociado al administrador")
 
