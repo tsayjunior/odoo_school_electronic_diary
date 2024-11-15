@@ -57,6 +57,14 @@
 
     <menuitem name="Actividad" id="agenda_escolar.menu_3_activity_list" parent="agenda_escolar.menu_3"
               action="agenda_escolar.activity_window"/>
+    <menuitem name="Actividad Estudiante" id="agenda_escolar.menu_3_activity_student_list" parent="agenda_escolar.menu_3"
+              action="agenda_escolar.activity_student_window"/>
+
+    <!-- <menuitem id="agenda_escolar.menu_3_course_teacher_list" 
+              name="Curso del profesor" 
+              parent="agenda_escolar.menu_3" 
+              action="agenda_escolar.course_teacher_window" 
+              /> -->
 
     <!-- <menuitem name="Estudiante" id="agenda_escolar.menu_1_student_list" parent="agenda_escolar.menu_1"
               action="agenda_escolar.action_student_window"/> -->

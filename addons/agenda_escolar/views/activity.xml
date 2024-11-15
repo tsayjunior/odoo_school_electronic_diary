@@ -7,15 +7,41 @@
       <field name="model">agenda_escolar.activity</field>
       <field name="arch" type="xml">
         <list>
-          <field name="name"/>
-          <field name="description"/>
-          <field name="date_activity" widget="datetime"/>
-          <field name="type"/>
-          <field name="state"/>
-          <field name="has_note"/>
-          <field name="teacher_id"/>
-          <field name="course_id"/>
+          <field name="name" />
+          <field name="description" />
+          <field name="date_activity" widget="datetime" />
+          <field name="type" />
+          <field name="state" />
+          <field name="has_note" />
+          <field name="teacher_id" />
+          <field name="course_id" />
+          <button name="action_open_activity_student" type="object" string="Estudiantes" class="btn-primary"/>
         </list>
+      </field>
+    </record>
+    <!-- Vista de formulario personalizada -->
+    <record model="ir.ui.view" id="agenda_escolar.activity_form">
+      <field name="name">agenda_escolar.activity form</field>
+      <field name="model">agenda_escolar.activity</field>
+      <field name="arch" type="xml">
+        <form string="Actividades">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="description" />
+              <field name="date_activity" widget="datetime" />
+              <field name="type" />
+              <field name="state" />
+              <field name="has_note" />
+              <field name="teacher_id" />
+              <!-- <field name="course_id" /> -->
+              <!-- <field name="course_id" /> -->
+              <field name="course_id" domain="[]" />
+              <!-- <field name="course_id" domain="[('id', 'in', teacher_id.assign_subject_ids.mapped('course_id').ids)]"/> -->
+
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -25,11 +51,15 @@
       <field name="name">Actividad</field>
       <field name="res_model">agenda_escolar.activity</field>
       <field name="view_mode">list,form</field>
+      <field name="view_id" ref="agenda_escolar.activity_list"/>
+      <field name="views" eval="[(5, 0, 0), (ref('agenda_escolar.activity_form'), 'form'), (ref('agenda_escolar.activity_list'), 'list')]" />
+      
+      <!-- <field name="context">{'default_teacher_id': user.partner_id.id if user.partner_id.is_teacher else False}</field> -->
     </record>
 
 
     <!-- server action to the one above -->
-<!--
+    <!--
     <record model="ir.actions.server" id="agenda_escolar.action_server">
       <field name="name">agenda_escolar server</field>
       <field name="model_id" ref="model_agenda_escolar_agenda_escolar"/>
@@ -46,6 +76,6 @@
 
     <!-- Top menu item -->
 
- 
+
   </data>
 </odoo>

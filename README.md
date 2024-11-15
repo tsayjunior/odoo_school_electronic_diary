@@ -116,7 +116,7 @@ Los comandos para iniciar Docker Desktop solo son aplicables si tienes Docker De
 
 una ves ingresado con ssh, poner los sgtes comandos para Actualizar tu sistema:
         
-        sudo apt update  => actualiza la lista de app que tiene ubunto
+        sudo apt update  => actualiza la lista de app que tiene ubuntu
 
 		sudo apt upgrade -y  => instala lo nuevo que tiene ubuntu, sus actualizaciones
 
@@ -164,3 +164,21 @@ Y para reiniciarlos, simplemente usa:
 
     
 
+******************* instalacion de ia openai *****************
+para ingresar a a cmd de odoo, en docker
+    docker-compose exec -u root -it web /bin/bash
+
+luego instalar la libreria de open ia
+    pip install openai --break-system-packages --ignore-installed
+
+o si no
+
+imgresar al servidor e ingresar al contenedor
+    docker exec -it odoo_school_electronic_diary_web_1 bash
+
+luego instalar 
+    apt update && apt install -y python3-pip
+
+en el sistema se añade la api de openai
+    entrando a ajuste, tecnico y parametros del sistemas, y se añade nuevo parametro
+        en clave se pone openai_api_key y en valor la api de openai
