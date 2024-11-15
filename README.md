@@ -168,3 +168,15 @@ para ingresar a a cmd de odoo, en docker
 
 luego instalar la libreria de open ia
     pip install openai --break-system-packages --ignore-installed
+
+o si no
+
+imgresar al servidor e ingresar al contenedor
+    docker exec -it odoo_school_electronic_diary_web_1 bash
+
+luego instalar 
+    apt update && apt install -y python3-pip
+
+en el sistema se añade la api de openai
+    entrando a ajuste, tecnico y parametros del sistemas, y se añade nuevo parametro
+        en clave se pone openai_api_key y en valor la api de openai
