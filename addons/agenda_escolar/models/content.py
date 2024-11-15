@@ -14,7 +14,7 @@ class content(models.Model):
     audio = fields.Binary(string="Audio", help="Archivo de audio")
     audio_filename = fields.Char(string="Nombre del archivo", help="Nombre del archivo de audio")
     audio_summary = fields.Text(string="Resumen de audio", help="Resumen del contenido del audio")
-    subject_id = fields.Many2one('agenda_escolar.subject', string="Materia", help="Seleccione la Materia")
+    subject_id = fields.Many2one('agenda_escolar.subject', string="Materia", help="Seleccione la Materia", compute="_compute_name", store=True)
 
     @api.model
     def create(self, values):
@@ -22,6 +22,11 @@ class content(models.Model):
         if values.get('audio'):
             record.audio_summary = self._get_audio_summary(values.get('audio'))
         return record
+    
+    def write(self, values):
+        if 'audio' in values and values.get('audio'):
+            values['audio_summary'] = self._get_audio_summary(values['audio'])
+        return super(content, self).write(values)
 
     def _get_audio_summary(self, audio):
         try:

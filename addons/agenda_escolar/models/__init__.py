@@ -17,3 +17,5 @@ from . import admin
 from . import activity_student
 from . import activity
 from . import content
+from . import event
+from . import comment
