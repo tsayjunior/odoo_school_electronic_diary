@@ -22,6 +22,7 @@ db_password = $PASSWORD
 logfile = /var/log/odoo/odoo-server.log
 log_handler = :DEBUG
 log_level = debug
+limit_request_body = 52428800
 EOL
 
 # Ejecutar el servidor de Odoo

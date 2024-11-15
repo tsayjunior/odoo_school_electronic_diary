@@ -155,6 +155,8 @@ Y para reiniciarlos, simplemente usa:
         
 ***************** eliminar contendedores y volumenes en docker
     docker-compose down -v
+********* elimina contenedores, imagenes y volumens
+    docker-compose down -v --rmi all
 
 
 *************** para dar permisos de escritura y lectura a init-addons.sh
