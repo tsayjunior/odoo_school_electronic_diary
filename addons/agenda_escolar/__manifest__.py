@@ -40,6 +40,7 @@ Long description of module's purpose
         'views/student.xml',
         'views/teacher.xml',
         'views/menu_views.xml',
+        'views/content.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

@@ -16,3 +16,4 @@ from . import tutor
 from . import admin
 from . import activity_student
 from . import activity
+from . import content

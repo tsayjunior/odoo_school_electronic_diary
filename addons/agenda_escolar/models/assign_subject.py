@@ -25,4 +25,18 @@ class assign_subject(models.Model):
                 'context': {
                     'default_assign_subject_id': self.id,  # Establece el assign_subject_id por defecto en el formulario de creación
             }
+        }
+    
+    def action_open_contents(self):
+        """Abre la vista de lista de contenidos"""
+        return {
+            'name': 'Contenidos',
+            'type': 'ir.actions.act_window',
+            'res_model': 'agenda_escolar.content',
+            'view_mode': 'list,form',
+            'target': 'current',
+            'domain': [('subject_id', '=', self.subject_id.id)],  # Filtra la vista de lista por course_id actual
+            'context': {
+                'default_subject_id': self.subject_id.id,  # Establece el course_id por defecto en el formulario de creación
             }
+        }

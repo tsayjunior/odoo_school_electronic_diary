@@ -12,6 +12,7 @@
           <field name="teacher_id"></field>
           <!-- Botón para abrir la vista de horarios -->
           <button name="action_open_schedules" type="object" string="Horarios" class="btn-primary"/>
+          <button name="action_open_contents" type="object" string="Contenido" class="btn-primary"/>
         </list>
       </field>
     </record>
