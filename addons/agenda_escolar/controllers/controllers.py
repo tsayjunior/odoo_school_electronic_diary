@@ -9,20 +9,48 @@ import logging
 class AgendaEscolar(http.Controller):
     @http.route('/agenda_escolar/agenda_escolar', auth='public')
     def index(self, **kw):
-        return "Hello, world"
+        return "hello"
 
-#     @http.route('/agenda_escolar/agenda_escolar/objects', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('agenda_escolar.listing', {
-#             'root': '/agenda_escolar/agenda_escolar',
-#             'objects': http.request.env['agenda_escolar.agenda_escolar'].search([]),
-#         })
+    @http.route('/agenda_escolar/other_route1/<int:number>', auth='public', methods=['GET'])
+    def other_route(self, number, **kw):
+        return f"El número que enviaste es: {number}"
 
-#     @http.route('/agenda_escolar/agenda_escolar/objects/<model("agenda_escolar.agenda_escolar"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('agenda_escolar.object', {
-#             'object': obj
-#         })
+
+    @http.route('/agenda_escolar/get_first_user', auth='public', methods=['GET'])
+    def other_route(self, **kw):
+        # Buscar el primer usuario que se encuentre (sin importar el número que se pase)
+        user = request.env['res.users'].search([], limit=1)
+        
+        if user:
+            # Si el usuario existe, devolver su información
+            return request.make_json_response({
+                'status': 'ok',
+                'user': {
+                    'id': user.id,
+                    'name': user.name,
+                    'email': user.email,
+                }
+            })
+        else:
+            # Si no se encuentra ningún usuario, devolver un mensaje de error
+            return request.make_json_response({
+                'status': 'error',
+                'message': 'No hay usuarios disponibles',
+            })
+    
+
+    @http.route('/agenda_escolar/agenda_escolar/objects', auth='public')
+    def list(self, **kw):
+        return http.request.render('agenda_escolar.listing', {
+            'root': '/agenda_escolar/agenda_escolar',
+            'objects': http.request.env['agenda_escolar.agenda_escolar'].search([]),
+        })
+
+    @http.route('/agenda_escolar/agenda_escolar/objects/<model("agenda_escolar.agenda_escolar"):obj>', auth='public')
+    def object(self, obj, **kw):
+        return http.request.render('agenda_escolar.object', {
+            'object': obj
+        })
 
 
 
@@ -71,3 +99,38 @@ class AuthController(http.Controller):
             }
         else:
             return {"error": "Invalid credentials"}
+
+
+class UserController(http.Controller):
+
+    @http.route(['/user/<int:user_id>'], type='http', auth='public', methods=['GET'])
+    def get_user_by_id(self, user_id):
+        """
+        Devuelve el usuario correspondiente al ID proporcionado.
+        """
+        # Obtener el usuario con el ID dado
+        user = request.env['res.users'].sudo().search([('id', '=', user_id)], limit=1)
+
+        # Si no se encuentra el usuario, retornar error
+        if not user:
+            return request.make_json_response({
+                'status': 'error',
+                'code': 404,
+                'message': 'Usuario no encontrado',
+            }, 404)
+
+        # Preparar los datos del usuario
+        user_data = {
+            'id': user.id,
+            'name': user.name,
+            'email': user.email,
+            'login': user.login,
+            'is_active': user.active,
+        }
+
+        # Retornar respuesta en formato JSON
+        return request.make_json_response({
+            'status': 'ok',
+            'code': 200,
+            'data': user_data,
+        })

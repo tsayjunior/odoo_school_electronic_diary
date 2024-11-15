@@ -175,7 +175,8 @@ o si no
 
 imgresar al servidor e ingresar al contenedor
     docker exec -it odoo_school_electronic_diary_web_1 bash
-
+ingresar al root 
+    docker-compose exec -u root -it web /bin/bash
 luego instalar 
     apt update && apt install -y python3-pip
 
